@@ -1,6 +1,6 @@
 # 🐈 Space Shooter
 
-![Header Image](https://raw.githubusercontent.com/KullanıcıAdın/RepoAdın/main/banner.png)
+![Header Image](https://github.com/byzakeskin/Space-Shooter/blob/main/resim_2025-02-19_203528093.png)
 
 ## 📌 Hakkında
 Bu proje, [Unity](https://unity.com/) kullanılarak geliştirilen bir **2D SPACE SHOOTER oyunu**dur. Oyuncu, uzayda ilerlerken düşmanlara karşı mücadele eder.
