@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 postoSpwan = new Vector3(Random.Range(-3f, 3f), 7, 0);
             GameObject newPowerUP = Instantiate(_shieldpowerupPrefab, postoSpwan, Quaternion.identity);
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(30.0f);
         }
     }
 

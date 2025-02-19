@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 5f;
+    private float _speed = 10f;
 
     private float _speedPowerup = 2f;
 
@@ -32,12 +32,24 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _shiledVisualizer;
 
+    [SerializeField]
+    private int _score;
+
+    private UIManager _uiManager;
+
     void Start()
     {
         transform.position = new Vector3(0, -3, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
-        if(_spawnManager == null)
+
+        if (_uiManager == null)
+        {
+            Debug.LogError("The UI Manager is null!");
+        }
+
+        if (_spawnManager == null)
         {
             Debug.LogError("The Spawn Manager is null!");
         }
@@ -112,6 +124,8 @@ public class Player : MonoBehaviour
         //_lives = _lives - 1;
         _lives --;
 
+        _uiManager.UpdateLives(_lives);
+
         if(_lives < 1)
         {
             _spawnManager.OnPlayerDEath(); 
@@ -148,5 +162,13 @@ public class Player : MonoBehaviour
         _isShieldActive = true;
         _shiledVisualizer.SetActive(true);
     }
+
+    public void AddScore(int point)
+    {
+        _score += point;
+        _uiManager.UpdateScore(_score);
+    }
 }
+
+
 
