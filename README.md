@@ -14,7 +14,7 @@ Bu proje, [Unity](https://unity.com/) kullanılarak geliştirilen bir **2D SPACE
 ## 📸 Ekran Görüntüleri
 | Ana Menü | Oyun İçi | Düşman Karşılaşması |
 |----------|---------|-------------------|
-| ![Ana Menü](https://via.placeholder.com/300) | ![Oyun İçi](https://via.placeholder.com/300) | ![Düşman](https://via.placeholder.com/300) |
+| ![Ana Menü](https://via.placeholder.com/300) | ![Oyun İçi](https://github.com/byzakeskin/Space-Shooter/blob/main/oyun%20içi.png) | ![Düşman](https://via.placeholder.com/300) |
 
 ## 🛠️ Kullanılan Teknolojiler
 - **Unity Engine** – Oyun motoru
