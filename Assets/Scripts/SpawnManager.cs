@@ -16,17 +16,21 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _speedpowerupPrefab;
 
+    [SerializeField]
+    private GameObject _shieldpowerupPrefab;
+
     private bool _stopSpawning = false;
 
     void Start()
     {
         //Allows us to perform timer-controlled operations.
-        StartCoroutine(SpawnRoutine());
-        StartCoroutine(SpawnPowerUpRoutine());
+        StartCoroutine(SpawnEnemyRoutine());
+        StartCoroutine(SpawnPowerUpTripleLaserRoutine());
         StartCoroutine(SpawnPowerUpSpeedRoutine());
+        StartCoroutine(SpawnPowerUpShieldRoutine());
     }
 
-    IEnumerator SpawnRoutine()
+    IEnumerator SpawnEnemyRoutine()
     {
         while (_stopSpawning == false)
         {
@@ -37,7 +41,7 @@ public class SpawnManager : MonoBehaviour
         } 
     }
 
-    IEnumerator SpawnPowerUpRoutine()
+    IEnumerator SpawnPowerUpTripleLaserRoutine()
     {
         while (_stopSpawning == false)
         {
@@ -54,6 +58,16 @@ public class SpawnManager : MonoBehaviour
             Vector3 postoSpwan = new Vector3(Random.Range(-7f, 7f), 7, 0);
             GameObject newPowerUP = Instantiate(_speedpowerupPrefab, postoSpwan, Quaternion.identity);
             yield return new WaitForSeconds(15.0f);
+        }
+    }
+
+    IEnumerator SpawnPowerUpShieldRoutine()
+    {
+        while (_stopSpawning == false)
+        {
+            Vector3 postoSpwan = new Vector3(Random.Range(-3f, 3f), 7, 0);
+            GameObject newPowerUP = Instantiate(_shieldpowerupPrefab, postoSpwan, Quaternion.identity);
+            yield return new WaitForSeconds(5.0f);
         }
     }
 

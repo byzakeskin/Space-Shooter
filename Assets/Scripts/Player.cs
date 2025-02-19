@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
  
     private bool _isTripleLaserActive = false;
     private bool _isSpeedPowerupActive = false;
+    private bool _isShieldActive = false;
 
+    [SerializeField]
+    private GameObject _shiledVisualizer;
 
     void Start()
     {
@@ -95,6 +98,15 @@ public class Player : MonoBehaviour
 
     public void Damage()
     {
+        
+        if(_isShieldActive == true)
+        {
+            _isShieldActive = false;
+            _shiledVisualizer.SetActive(false);
+            return;
+        }
+        
+        
         //All these writing styles serve the same function.
         //_lives --;
         //_lives = _lives - 1;
@@ -129,6 +141,12 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         _isSpeedPowerupActive = false;
+    }
+
+    public void ShieldsActive()
+    {
+        _isShieldActive = true;
+        _shiledVisualizer.SetActive(true);
     }
 }
 

@@ -40,7 +40,10 @@ public class PowerUp : MonoBehaviour
                         player.SpeedPowerupActive();
                         break;
                     case 2:
-                        Debug.Log("Shiled collected!");
+                        player.ShieldsActive();
+                        break;
+                    default:
+                        Debug.Log("Default!");
                         break;
                 }
             }
